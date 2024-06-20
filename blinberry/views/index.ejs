@@ -1,0 +1,35 @@
+<%- include('layout', { body: 'index' }) %>
+
+<section id="home" class="fade-in">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Добро пожаловать в Блинбери</h1>
+            <p>Вкусные блины с доставкой на дом</p>
+            <button class="btn-primary" onclick="location.href='/menu'">Смотреть меню</button>
+        </div>
+    </div>
+</section>
+
+<section id="specialties">
+    <h2>Новинки</h2>
+    <div class="specialties-container">
+        <div class="specialty">
+            <img src="/images/classic-pancake.jpg" alt="Классический блин">
+            <h3>Классический блин</h3>
+            <p>Традиционный блин с маслом и мёдом.</p>
+            <button class="btn-primary add-to-cart" data-name="Классический блин" data-price="300" data-img="/images/classic-pancake.jpg">В корзину</button>
+        </div>
+        <div class="specialty">
+            <img src="/images/berry-pancake.jpg" alt="Ягодный блин">
+            <h3>Ягодный блин</h3>
+            <p>Блин с ягодами и сливками.</p>
+            <button class="btn-primary add-to-cart" data-name="Ягодный блин" data-price="350" data-img="/images/berry-pancake.jpg">В корзину</button>
+        </div>
+        <div class="specialty">
+            <img src="/images/chocolate-pancake.jpg" alt="Шоколадный блин">
+            <h3>Шоколадный блин</h3>
+            <p>Блин с шоколадным соусом и орехами.</p>
+            <button class="btn-primary add-to-cart" data-name="Шоколадный блин" data-price="400" data-img="/images/chocolate-pancake.jpg">В корзину</button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<%- include('layout', { body: 'cart' }) %>
+
+<section id="cart" class="fade-in">
+    <h1>Корзина</h1>
+    <div id="cart-items">
+        <% if (cart.length === 0) { %>
+            <p>Ваша корзина пуста.</p>
+        <% } else { %>
+            <ul>
+                <% cart.forEach(item => { %>
+                    <li class="cart-item">
+                        <img src="<%= item.img %>" alt="<%= item.name %>" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h3><%= item.name %></h3>
+                            <p><%= item.price %> ₽</p>
+                            <button class="btn-danger remove-from-cart" data-name="<%= item.name %>">Удалить</button>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+            <p>Общая стоимость: <%= total %> ₽</p>
+            <p>Стоимость доставки: <%= deliveryFee %> ₽</p>
+            <p>Итоговая стоимость: <%= finalTotal %> ₽</p>
+        <% } %>
+    </div>
+    <form action="/delivery" method="GET">
+        <button type="submit" class="btn-primary">Оформить заказ</button>
+    </form>
+</section>

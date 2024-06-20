@@ -1,0 +1,15 @@
+<%- include('layout', { body: 'menu' }) %>
+
+<section id="menu" class="fade-in">
+    <h1>Меню</h1>
+    <div class="menu-container">
+        <% menuItems.forEach(item => { %>
+            <div class="menu-item">
+                <img src="<%= item.img %>" alt="<%= item.name %>">
+                <h3><%= item.name %></h3>
+                <p>Описание товара.</p>
+                <button class="btn-primary add-to-cart" data-name="<%= item.name %>" data-price="<%= item.price %>" data-img="<%= item.img %>">В корзину</button>
+            </div>
+        <% }); %>
+    </div>
+</section>

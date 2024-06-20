@@ -1,0 +1,33 @@
+<%- include('layout', { body: 'profile' }) %>
+
+<section id="profile" class="slide-in">
+    <% if (user) { %>
+        <h1>Профиль</h1>
+        <p>Добро пожаловать, <%= user.name %>!</p>
+        <h2>Ваши заказы</h2>
+        <ul>
+            <% orders.forEach(order => { %>
+                <li>
+                    <strong>Имя:</strong> <%= order.name %><br>
+                    <strong>Адрес:</strong> <%= order.address %><br>
+                    <strong>Телефон:</strong> <%= order.phone %><br>
+                    <strong>Заказ:</strong>
+                    <ul>
+                        <% order.cart.forEach(item => { %>
+                            <li><%= item.name %> - <%= item.price %> ₽</li>
+                        <% }) %>
+                    </ul>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <h1>Войти</h1>
+        <form action="/profile/login" method="post">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Войти</button>
+        </form>
+    <% } %>
+</section>
